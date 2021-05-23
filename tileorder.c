@@ -1,3 +1,6 @@
+/* TileOrder - converts .CHR files to Mode 6 tile sets.
+Apologies for the poor quality - this was a quick bodge */
+
 #include <stdio.h>
 #include <stdlib.h>
 
