@@ -155,7 +155,7 @@ m6_render_newline_l1:
 	ld h,e						; Load ((a+b)^2)/4 into HL
 
 ; N.B. Ordinarily, OR A would be required to prevent a carry flag mishap. However, the carry was
-; reset by the DEC H instruction a few lines ago
+; reset by the ADD A,D instruction a few lines ago
 	sbc hl,bc					; Result = ((a+b)^2)/4 - ((a-b)^2)/4
 	add hl,hl
 	add hl,hl					; Scale back up to account for truncation
