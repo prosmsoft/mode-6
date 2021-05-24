@@ -4,7 +4,7 @@ Pseudo-3D floor renderer for the ZX Spectrum (adaptable to other Z80-based syste
 ## How to use within your own program
 The rendering routine is stored in render.asm, and contains most of the data, equates and variable definitions necessary. multab.asm and edgetab.asm must also be included for the renderer to work - their contents are not included in render.asm because they need to be aligned to a 256-byte boundary, so they are separate so that you may organise them within your memory map in a way that wastes as little space as possible. You will have to define a buffer in memory to hold the rendered image. With the standard 40 line setting, a buffer of 1280 bytes is required, aligned to a 32-byte boundary. In addition, player coordinates must be provided in 16-bit variables named m6_player_x and m6_player_y.
 
-You will also need to provide your own tile set and map data. The source code for a C utility to rearrange a ZX-Paint CHR file into a Mode 6 tile set is included. The tile set and map data must also be aligned to a 256-byte boundary.
+You will also need to provide your own tile set and map data. The source code for a C utility to rearrange a ZX-Paint CHR file into a Mode 6 tile set is included. By default, the map data must have the dimensions 64x32, and can only use tile indexes between 0-31 (this can of course be altered by rewriting sections of the code). The tile set and map data must also be aligned to a 256-byte boundary.
 
 A sample program (main.asm) is included to demonstrate how to use the Mode 6 renderer within your own programs.
 
